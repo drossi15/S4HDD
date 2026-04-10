@@ -2,7 +2,7 @@
 clc;
 clearvars;
 
-result = load("src/Results/M4_CO.mat");
+result = load("src/Results/M3_CO.mat");
 r = result.results;
 
 % RMSE e R2 per stazione
@@ -33,7 +33,8 @@ disp(['Mean Bias: ', num2str(mean_bias)]);
 disp(['Std RMSE:  ', num2str(std_rmse)]);
 disp(['CVRMSE:    ', num2str(cvrmse)]);
 
-% Boxplot residui per stazione
+% Boxplot residui per stazione  
+%residuals station x timestep
 figure
 boxplot(r.residuals')
 title('Boxplot residui per stazione')
@@ -88,3 +89,15 @@ beta = r.beta;   % cov x station
 mean_beta = mean(beta, 2 , 'omitnan');
 disp('Mean Beta per ogni covariata:');
 disp(mean_beta);
+
+
+%t-stat
+
+varcov = r.varcov;   %cov x station
+beta_cv = r.beta;  %cov x stations
+
+t_stat = abs(beta_cv ./ sqrt(varcov));
+
+t_stat_mean = mean(t_stat,2);
+disp('t_stat per ogni covariata:');
+disp(t_stat_mean);

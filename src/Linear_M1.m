@@ -13,7 +13,7 @@ toRemove = {'No','year','month','day','hour','PM2_5','PM10','SO2','O3','wd',...
 toRemove = intersect(dataset.Properties.VariableNames, toRemove);
 dataset  = removevars(dataset, toRemove);
 
-%% ================= Linear Regression NO2 =================
+%% Linear Regression NO2 
 dataset_no2 = removevars(dataset, 'CO');  
 stations    = unique(dataset_no2.station_id);
 nStations   = numel(stations);
@@ -41,7 +41,7 @@ for i = 1:nStations
     y_train = y_train(valid_train);
     X_train = X_train(valid_train, :);
 
-    % Standardizzazione manuale delle X
+    % Standardizzazione manuale di X
     mu = mean(X_train{:,:}, 1);
     sigma = std(X_train{:,:}, 0, 1);
     X_train_std = (X_train{:,:} - mu) ./ sigma;
@@ -56,21 +56,21 @@ for i = 1:nStations
     y_test = y_test(valid_test);
     X_test = X_test(valid_test, :);
 
-    % Standardizza test set usando media e std del training
+    % Standardizzo test set usando media e std del training
     X_test_std = (X_test{:,:} - mu) ./ sigma;
     X_test_std = array2table(X_test_std, 'VariableNames', X_test.Properties.VariableNames);
 
     y_hat = predict(mdl, X_test_std);
 
-    % Back-transform su scala originale
+    % Back-transform 
     y_test_orig = exp(y_test);
     y_hat_orig  = exp(y_hat);
 
-    % Salvataggio globale
+    % Salvataggio 
     obs_all  = [obs_all;  y_test_orig];
     pred_all = [pred_all; y_hat_orig];
 
-    % Metriche su scala originale
+    % Metriche 
     residuals{i} = y_test_orig - y_hat_orig;
     rmse(i) = sqrt(mean((y_test_orig - y_hat_orig).^2, 'omitnan'));
     mse(i)  = mean((y_test_orig - y_hat_orig).^2, 'omitnan');
@@ -81,7 +81,7 @@ end
 
 save('src/Results/Linear_M1_NO2.mat', 'rmse', 'mse', 'bias', 'r2', 'obs_all', 'pred_all', 'residuals');
 
-%% ================= Linear Regression CO =================
+%% Linear Regression CO 
 dataset_co = removevars(dataset, 'NO2');  
 stations   = unique(dataset_co.station_id);
 nStations  = numel(stations);
@@ -108,7 +108,7 @@ for i = 1:nStations
     y_train = y_train(valid_train);
     X_train = X_train(valid_train, :);
 
-    % Standardizzazione manuale delle X
+    % Standardizzazione manuale di X
     mu = mean(X_train{:,:}, 1);
     sigma = std(X_train{:,:}, 0, 1);
     X_train_std = (X_train{:,:} - mu) ./ sigma;
@@ -123,21 +123,21 @@ for i = 1:nStations
     y_test = y_test(valid_test);
     X_test = X_test(valid_test, :);
 
-    % Standardizza test set usando media e std del training
+    % Standardizzo test set usando media e std del training
     X_test_std = (X_test{:,:} - mu) ./ sigma;
     X_test_std = array2table(X_test_std, 'VariableNames', X_test.Properties.VariableNames);
 
     y_hat = predict(mdl, X_test_std);
 
-    % Back-transform su scala originale
+    % Back-transform
     y_test_orig = exp(y_test);
     y_hat_orig  = exp(y_hat);
 
-    % Salvataggio globale
+    % Salvataggio
     obs_all  = [obs_all;  y_test_orig];
     pred_all = [pred_all; y_hat_orig];
 
-    % Metriche su scala originale
+    % Metriche 
     residuals{i} = y_test_orig - y_hat_orig;
     rmse(i) = sqrt(mean((y_test_orig - y_hat_orig).^2, 'omitnan'));
     mse(i)  = mean((y_test_orig - y_hat_orig).^2, 'omitnan');
@@ -182,10 +182,10 @@ fprintf('CV RMSE: %.3f\n', rmse_mean/47.0345);
 
 acf1 = zeros(nStations, 1);
 for i = 1:nStations
-    res = residuals{i};              % {} per cell array
+    res = residuals{i};              
     res = res(~isnan(res));
     if numel(res) > 10
-        acf = autocorr(res, 'NumLags', 1);   % res è già colonna, no trasposta
+        acf = autocorr(res, 'NumLags', 1);   
         acf1(i) = acf(2);
     else
         acf1(i) = NaN;
@@ -229,10 +229,10 @@ fprintf('CV RMSE: %.3f\n', rmse_mean/1.2059e+03);
 
 acf1 = zeros(nStations, 1);
 for i = 1:nStations
-    res = residuals{i};              % {} per cell array
+    res = residuals{i};              
     res = res(~isnan(res));
     if numel(res) > 10
-        acf = autocorr(res, 'NumLags', 1);   % res è già colonna, no trasposta
+        acf = autocorr(res, 'NumLags', 1);   
         acf1(i) = acf(2);
     else
         acf1(i) = NaN;
