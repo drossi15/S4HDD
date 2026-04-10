@@ -32,8 +32,7 @@ This script implements the baseline linear regression model (M1) for:
 It includes:
 - model estimation
 - leave-one-gauge-out cross validation
-- computation of performance metrics (RMSE, R², Bias)
-- residual analysis
+
 
 ---
 
@@ -59,4 +58,10 @@ This script prepares the data for the bivariate HDGM model.
 This script implements:
 - estimation of the bivariate HDGM model
 - leave-one-gauge-out cross-validation
+
+----
+
+`Results_Analysis.m`
+This script implements the results analysis
+
 
