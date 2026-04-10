@@ -19,12 +19,12 @@ The output is a unified dataset used in all subsequent analyses.
 
 ---
 
-### `eda.m`
+`eda.m`
 This file contains all scripts used for exploratory data analysis.
 
 ---
 
-### `Linear_M1.m`
+ `Linear_M1.m`
 This script implements the baseline linear regression model (M1) for:
 - NO₂
 - CO
@@ -37,25 +37,25 @@ It includes:
 
 ---
 
-### `PreProcessM2.m` / `PreProcessM3.m`
+ `PreProcessM2.m` / `PreProcessM3.m`
 These scripts perform the required preprocessing steps for the univariate HDGM model.
 They are used before model estimation for M2 and M3.
 
 ---
 
-### `Logocv.m`
+ `Logocv.m`
 This script contains:
 - estimation of the univariate HDGM model
 - leave-one-gauge-out cross validation procedure
 
 ---
 
-### `PreProcessM4.m`
+ `PreProcessM4.m`
 This script prepares the data for the bivariate HDGM model.
 
 ---
 
-### `Logocv_bivariate.m`
+ `Logocv_bivariate.m`
 This script implements:
 - estimation of the bivariate HDGM model
 - leave-one-gauge-out cross-validation
