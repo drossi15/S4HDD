@@ -9,7 +9,7 @@ This repository contains the MATLAB scripts used for data preprocessing, explora
 
 ## Project Structure
 
-# `Dataset_enrichment.m`
+ `Dataset_enrichment.m`
 This script is responsible for:
 - merging individual station datasets into a single dataset (`combinedData.mat`)
 - creating new derived variables (feature engineering)
