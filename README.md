@@ -9,7 +9,7 @@ This repository contains the MATLAB scripts used for data preprocessing, explora
 
 ##  Project Structure
 
-### 🔹 Data preprocessing and enrichment
+
 
 #### `Dataset_enrichment.m`
 This script is responsible for:
@@ -21,14 +21,12 @@ The output is a unified dataset used in all subsequent analyses.
 
 ---
 
-### 🔹 Exploratory Data Analysis (EDA)
 
 #### `eda.m` 
 
 This file contains all scripts used for exploratory data analysis
 ---
 
-### 🔹 Linear baseline model
 
 #### `Linear_M1.m`
 This script implements the baseline linear regression model (M1) for:
@@ -43,7 +41,6 @@ It includes:
 
 ---
 
-### 🔹 Preprocessing for univariate HDGM models
 
 #### `PreProcessM2.m`
 #### `PreProcessM3.m`
@@ -53,7 +50,6 @@ They are used before model estimation for M2 and M3.
 
 ---
 
-### 🔹 Univariate HDGM estimation
 
 #### `Logocv.m`
 This script contains:
@@ -62,13 +58,11 @@ This script contains:
 
 ---
 
-### 🔹 Preprocessing for bivariate HDGM model
 
 #### `PreProcessM4.m`
 This script prepares the data for the bivariate HDGM model
 ---
 
-### 🔹 Bivariate HDGM estimation
 
 #### `Loogocv_bivariate.m`
 This version of the script implements:
@@ -79,12 +73,6 @@ This version of the script implements:
 ---
 
 
-## Models Included
-
-- M1: Linear regression baseline
-- M2: HDGM with spatial covariates
-- M3: HDGM with spatio-temporal + meteorological covariates
-- M4: Bivariate HDGM (joint NO$_2$ and CO modeling)
 
 ---
 
