@@ -25,9 +25,7 @@ This file contains all scripts used for exploratory data analysis.
 ---
 
  `Linear_M1.m`
-This script implements the baseline linear regression model (M1) with LOGOCV validation for:
-- NO₂
-- CO
+This script implements the baseline linear regression model (M1) with LOGOCV validation for NO₂ and CO
 
 ---
 
