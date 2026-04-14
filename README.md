@@ -25,27 +25,21 @@ This file contains all scripts used for exploratory data analysis.
 ---
 
  `Linear_M1.m`
-This script implements the baseline linear regression model (M1) for:
+This script implements the baseline linear regression model (M1) with LOGOCV validation for:
 - NO₂
 - CO
-
-It includes:
-- model estimation
-- leave-one-gauge-out cross validation
-
 
 ---
 
  `PreProcessM2.m` / `PreProcessM3.m`
 These scripts perform the required preprocessing steps for the univariate HDGM model.
-They are used before model estimation for M2 and M3.
+They are used before 'Logocv.m' for M2 and M3.
 
 ---
 
  `Logocv.m`
 This script contains:
-- estimation of the univariate HDGM model
-- leave-one-gauge-out cross validation procedure
+- estimation of the univariate HDGM model with LOGOCV validation
 
 ---
 
@@ -56,12 +50,11 @@ This script prepares the data for the bivariate HDGM model.
 
  `Logocv_bivariate.m`
 This script implements:
-- estimation of the bivariate HDGM model
-- leave-one-gauge-out cross-validation
-
+- estimation of the bivariate HDGM model with LOGOCV validation
+- 
 ----
 
 `Results_Analysis.m`
-This script implements the results analysis
+This script implements the results analysis section
 
 
