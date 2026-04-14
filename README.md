@@ -1,6 +1,6 @@
 # S4HDD
 
-**Statistics for High Dimensional Data – Course Project**
+**Statistics for High Dimensional Data – UniBg Course Project**
 
 # Spatio-Temporal Air Pollution Modeling Pipeline
 
