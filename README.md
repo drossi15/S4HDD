@@ -47,9 +47,7 @@ This script prepares the data for the bivariate HDGM model.
 ---
 
  `Logocv_bivariate.m`
-This script implements:
-- estimation of the bivariate HDGM model with LOGOCV validation
-- 
+This script implements estimation of the bivariate HDGM model with LOGOCV validation
 ----
 
 `Results_Analysis.m`
