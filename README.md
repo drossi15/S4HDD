@@ -15,42 +15,41 @@ This script is responsible for:
 - creating new derived variables (feature engineering)
 - handling missing values and data cleaning procedures
 
-The output is a unified dataset used in all subsequent analyses.
+- The output is a unified dataset used in all subsequent analyses.
 
 ---
 
 `eda.m`
-This file contains all scripts used for exploratory data analysis.
+- This file contains all scripts used for exploratory data analysis.
 
 ---
 
  `Linear_M1.m`
-This script implements the baseline linear regression model (M1) with LOGOCV validation for NO₂ and CO
+-  script implements the baseline linear regression model (M1) with LOGOCV validation for NO₂ and CO
 
 ---
 
  `PreProcessM2.m` / `PreProcessM3.m`
-These scripts perform the required preprocessing steps for the univariate HDGM model.
-They are used before 'Logocv.m' for M2 and M3.
+- These scripts perform the required preprocessing steps for the univariate HDGM model.
+- They are used before 'Logocv.m' for M2 and M3.
 
 ---
 
  `Logocv.m`
-This script contains:
-- estimation of the univariate HDGM model with LOGOCV validation
+- This script contains estimation of the univariate HDGM model with LOGOCV validation
 
 ---
 
  `PreProcessM4.m`
-This script prepares the data for the bivariate HDGM model.
+- This script prepares the data for the bivariate HDGM model.
 
 ---
 
  `Logocv_bivariate.m`
-This script implements estimation of the bivariate HDGM model with LOGOCV validation
+- This script implements estimation of the bivariate HDGM model with LOGOCV validation
 ----
 
 `Results_Analysis.m`
-This script implements the results analysis section
+- This script implements the results analysis section
 
 
